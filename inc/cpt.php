@@ -36,7 +36,6 @@ register_post_type( "galerie", array (
   'supports' => 
   array (
     0 => 'title',
-    1 => 'editor',
   ),
   'taxonomies' => 
   array (
