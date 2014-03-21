@@ -7,7 +7,7 @@ class shortcode_gallery {
 		add_action('init', array( $this, 'enqueue'), 30 );
 		add_action('init', array( $this, 'image_size'), 30 );
 		add_action('init', array( $this, 'my_slider_galeries'), 30 );
-		add_action('admin_head', array( $this, 'prompt_box'), 30 );
+		add_action('admin_footer', array( $this, 'prompt_box'), 30 );
 	}
 
 	function shortcode_gallery($atts){
