@@ -18,3 +18,6 @@ define('WSF_PORTFOLIO_DIR', plugin_dir_path(__FILE__));
 require_once( WSF_PORTFOLIO_DIR . '/inc/cpt.php');
 require_once( WSF_PORTFOLIO_DIR . '/inc/fields.php');
 // require_once( WSF_PORTFOLIO_DIR . '/inc/shortcodes.php');
+ 
+
+ // test pour commit
