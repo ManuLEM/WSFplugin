@@ -4,7 +4,7 @@ class shortcode_gallery {
 
 	function __construct() {
 		add_shortcode( 'slider', array( $this, 'shortcode_gallery'));
-		add_action('init', array( $this, 'enqueue'), 30 );
+		add_action('template_redirect', array( $this, 'enqueue'), 30 );
 		add_action('init', array( $this, 'image_size'), 30 );
 		add_action('init', array( $this, 'my_slider_galeries'), 30 );
 	}
@@ -17,7 +17,7 @@ class shortcode_gallery {
 		$slides = get_field('images', $id_gallery);
 		$return = '<div class="swipper-container"><div class="swipper-wrapper">';
 		foreach ($slides as $slide => $image) {
-			$return .= '<div class = "swipper-slide">' . wp_get_attachment_image($image['image']['id'], 'slider_size') . '</div>';
+			$return .= '<div class="swipper-slide">' . wp_get_attachment_image($image['image']['id'], 'slider_size') . '</div>';
 		}
 
 		$return .= '</div></div>';
