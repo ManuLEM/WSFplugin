@@ -11,6 +11,10 @@
                   e.preventDefault();
                   this.onSubmit();
                });
+               $('body').click(function(){
+                  jQuery('#gallery-plugin.prompt').hide();
+                  jQuery('#gallery-plugin.prompt').css('z-index', 'inherit');
+               });
             },
             onSubmit : function(){
                var galeries = jQuery('#gallery-plugin.prompt').val();

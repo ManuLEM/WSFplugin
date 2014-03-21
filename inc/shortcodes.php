@@ -15,16 +15,19 @@ class shortcode_gallery {
 		), $atts));
 
 		$slides = get_field('images', $id_gallery);
-		$return = '';
+		$return = '<div class="swipper-container"><div class="swipper-wrapper">';
 		foreach ($slides as $slide => $image) {
-			$return .= wp_get_attachment_image($image['image']['id'], 'slider_size');
+			$return .= '<div class = "swipper-slide">' . wp_get_attachment_image($image['image']['id'], 'slider_size') . '</div>';
 		}
+
+		$return .= '</div></div>';
 
 		return $return;
 	}
 
 	function enqueue() {
-		wp_enqueue_script('slider-swiper', WSF_PORTFOLIO_URL . '/lib/idangerous.swiper.js', array('jquery'), "1.0", true);
+		wp_enqueue_script('slider-swiper', WSF_PORTFOLIO_URL . '/lib/idangerous.swiper.js', array('jquery'), "1.0", false);
+		wp_enqueue_script('slider-js', WSF_PORTFOLIO_URL . '/js/main.js', array('jquery'), "1.0", true);
 		wp_enqueue_style( 'swiper', WSF_PORTFOLIO_URL . '/lib/idangerous.swiper.css', false, "1.0", 'all' );
 	}
 
@@ -35,28 +38,7 @@ class shortcode_gallery {
 
 	function my_slider_galeries() {
 
-		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
-			return;
-		}
-
-		if ( get_user_option('rich_editing') == 'true' ) {
-			add_filter( 'mce_external_plugins', array( $this, 'add_plugin') );
-			add_filter( 'mce_buttons', array( $this, 'register_button') );
-
-			wp_enqueue_style( 'galerie_shortcode_form', WSF_PORTFOLIO_URL . '/lib/style.css', false, "1.0", 'all' );
-			$i = 1;
-			echo "<div id='gallery-plugin' class='prompt'>
-				<form>
-					<label>Nom de la galerie:</label>
-					<br>
-					<select>
-						<option value='1'>Test halala</option>
-					</select>
-					<br>
-					<input type='submit' value='Valider'/>
-				<form>
-			</div>";
-		}
+		return;
 
 	}
 
@@ -69,4 +51,5 @@ class shortcode_gallery {
 		$plugin_array['galeries'] = WSF_PORTFOLIO_URL . '/js/button.js';
 		return $plugin_array;
 	}
+	
 }

@@ -5,7 +5,7 @@ function register_my_cpt_galerie() {
 register_post_type( "galerie", array (
   'labels' => 
   array (
-    'name' => 'Les Galeries',
+    'name' => 'Galeries',
     'singular_name' => 'Galerie',
     'add_new' => 'Ajouter',
     'add_new_item' => 'Ajouter une nouvelle galerie',
