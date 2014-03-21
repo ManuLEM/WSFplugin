@@ -9,17 +9,17 @@
                jQuery('#gallery-plugin.prompt').show();
                jQuery('#gallery-plugin.prompt form').submit(function(e){
                   e.preventDefault();
-                  this.onSubmit();
-               });
-               $('body').click(function(){
+                  var galeries = jQuery('#gallery-plugin.prompt #shortcode_list').val();
+                  if (galeries != null && galeries != '' )
+                     ed.execCommand('mceInsertContent', false, '[slider id_gallery="'+ galeries +'"]');
+                  
                   jQuery('#gallery-plugin.prompt').hide();
                   jQuery('#gallery-plugin.prompt').css('z-index', 'inherit');
                });
-            },
-            onSubmit : function(){
-               var galeries = jQuery('#gallery-plugin.prompt').val();
-               if (galeries != null && galeries != '' )
-                  ed.execCommand('mceInsertContent', false, '[slider id_gallery="'+galeries+'"]');
+               jQuery('.shortcode_cancel').click(function(){
+                  jQuery('#gallery-plugin.prompt').hide();
+                  jQuery('#gallery-plugin.prompt').css('z-index', 'inherit');
+               });
             }
          });
       },
