@@ -25,8 +25,8 @@ class shortcode_gallery {
 	}
 
 	function enqueue() {
-		wp_enqueue_script('slider-swiper', WSF_PORTFOLIO_DIR . '/slider/idangerous.swiper.js', array('jquery'), "1.0", true);
-		wp_enqueue_style( 'swiper', WSF_PORTFOLIO_DIR . '/slider/idangerous.swiper.css', false, "1.0", 'all' );
+		wp_enqueue_script('slider-swiper', WSF_PORTFOLIO_DIR . '/lib/idangerous.swiper.js', array('jquery'), "1.0", true);
+		wp_enqueue_style( 'swiper', WSF_PORTFOLIO_DIR . '/lib/idangerous.swiper.css', false, "1.0", 'all' );
 	}
 
 	function image_size(){
