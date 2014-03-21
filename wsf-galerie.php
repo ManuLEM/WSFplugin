@@ -24,4 +24,4 @@ require_once( WSF_PORTFOLIO_DIR . '/inc/shortcodes.php');
 new shortcode_gallery();
 >>>>>>> 81cfbf83b5fa5bdfaca52b85977c958fae35d832
 
-// test commit Victor
+// test commit Victrrrrrrrr
