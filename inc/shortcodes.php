@@ -42,6 +42,20 @@ class shortcode_gallery {
 		if ( get_user_option('rich_editing') == 'true' ) {
 			add_filter( 'mce_external_plugins', array( $this, 'add_plugin') );
 			add_filter( 'mce_buttons', array( $this, 'register_button') );
+
+			wp_enqueue_style( 'galerie_shortcode_form', WSF_PORTFOLIO_URL . '/lib/style.css', false, "1.0", 'all' );
+			$i = 1;
+			echo "<div id='gallery-plugin' class='prompt'>
+				<form>
+					<label>Nom de la galerie:</label>
+					<br>
+					<select>
+						<option value='1'>Test halala</option>
+					</select>
+					<br>
+					<input type='submit' value='Valider'/>
+				<form>
+			</div>";
 		}
 
 	}

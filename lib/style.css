@@ -1,0 +1,8 @@
+#gallery-plugin.prompt{
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	display: none;
+	background: #ffffff;
+	padding: 10px;
+}

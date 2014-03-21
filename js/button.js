@@ -5,9 +5,16 @@
             title : 'Galeries',
             image : url+'/gallery.png',
             onclick : function() {
-               var galeries = prompt("Number of galeries", "1");
-
-               if (galeries != null && galeries != '' && !isNaN(galeries) )
+               jQuery('#gallery-plugin.prompt').css('z-index', '100');
+               jQuery('#gallery-plugin.prompt').show();
+               jQuery('#gallery-plugin.prompt form').submit(function(e){
+                  e.preventDefault();
+                  this.onSubmit();
+               });
+            },
+            onSubmit : function(){
+               var galeries = jQuery('#gallery-plugin.prompt').val();
+               if (galeries != null && galeries != '' )
                   ed.execCommand('mceInsertContent', false, '[slider id_gallery="'+galeries+'"]');
             }
          });
